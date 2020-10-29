@@ -19,6 +19,8 @@ int get(int x, int k)
 void init(int x, int k)
 {
     succ[x][k]=succ[succ[x][k/2]][k/2];
+    //   6  2 = succ (succ(6 1), 1)
+    // succ[6][2] = 5
 }
 
 int main()
@@ -33,11 +35,12 @@ int main()
     for(int i=0; i<log2(6); i++)
     {
         step*=2;
-        for(int j=1; j<10; j++)
+        for(int j=1; j<=6; j++)
         {
             init(j,step);
         }
     }
+    get(6, 3);
     int a=succ[1][1],b=succ[1][2];
     while(a!=b)
     {
