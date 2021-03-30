@@ -1,0 +1,2 @@
+https://codeforces.com/blog/entry/11080 - Policy based DTS
+https://codeforces.com/blog/entry/60737 - Hash Tables

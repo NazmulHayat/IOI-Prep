@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#ifdef LOCAL
+#ifndef EVAL
 void timer(string msg=""){double now=(double)clock()/CLOCKS_PER_SEC;static double t=now;static int cnt=0;
 double diff=now - t;if(cnt!=0)cout<<"\n[time "<<cnt<<" "<<msg<<": "<<fixed<<setprecision(3)<<diff<<" seconds]\n";cnt++;t=now;}
 #define fast ;
@@ -35,14 +35,61 @@ void timer() {return;}
 #define trav(a,x) for (auto& a: x)
 
 void solve(){
-	debug("gello Worldd");
+	debug("Gello wor");
+	ll n;
+	cin >> n;
+	ll arr[n];
+	FOR(i, 0, n)
+		cin >> arr[i];
+	sort(arr, arr+n);
+	ld sm=0, diff=0, ans=INT_MIN;
+    int p1=1,p2=n-2;
+	if(n%2==0){
+		for(int i = 0 ; i < n-1 ; i++){
+			ld tmp = (arr[n-1]+arr[n-2])*1.0;
+			tmp/=(arr[i+1]-arr[i]);
+			if(i==n-3){
+				tmp = (arr[n-1]+arr[n-4])*1.0;
+				debug(tmp);
+				tmp /= (arr[i+1]-arr[i]);
+				debug(tmp, arr[i+1], arr[i]);
+			}
+			else if(i==n-2){
+				tmp = (arr[n-3]+arr[n-4])*1.0;
+				debug(tmp);
+				tmp /= (arr[i+1]-arr[i]);
+				debug(tmp, arr[i+1], arr[i]);
+			}
+			if(ans < tmp) ans = tmp;
+			debug(i, tmp, ans);
+		}
+	}
+	else{
+		for(int i = 0 ; i < n-1 ; i++){
+			ld tmp = (arr[n-1]+arr[n-2])*1.0;
+			tmp /= (arr[i+1]-arr[i]);
+			if(i==n-3){
+				tmp = (arr[n-1]+arr[n-4])*1.0;
+				debug(tmp);
+				tmp /= (arr[i+1]-arr[i]);
+				debug(tmp, arr[i+1], arr[i]);
+			}
+			else if(i==n-2){
+		      	tmp = (arr[n-3]+arr[n-4])*1.0;
+				debug(tmp);
+				tmp /= (arr[i+1]-arr[i]);
+				debug(tmp, arr[i+1], arr[i]);	
+			}
+			if(ans < tmp) ans = tmp;
+			debug(i, tmp);
+		}
+	}
+	cout << ans << endl;	
+
 }
 
 int main(){
 	fast;
-	freopen("input1.txt", "r", stdin);
-	freopen("output1.txt", "w", stdout);
-
 	timer();
 	int t=1;
 	FOR(i, 1, t+1){
@@ -52,14 +99,7 @@ int main(){
 	timer();
 }
 
+//1 2 3 4 5 6 
 
-#include<bits/stdc++.h>
-using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		cout  <<  " NAazMUJL  JOSS " << endl;
-	}
-}
+

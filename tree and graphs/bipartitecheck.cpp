@@ -2,11 +2,10 @@
 using namespace std;
 
 bool isBipartite(vector<int> graph[], int src, vector<bool>& visited, vector<int>& color){
-
     for(auto &i: graph[src]){
         if(visited[i] == false){
             visited[i] = true;
-            color[i] =  !color[src];
+            color[i] = !color[src];
             if(!isBipartite(graph, i, visited, color))
                 return false;
         }
@@ -18,20 +17,40 @@ bool isBipartite(vector<int> graph[], int src, vector<bool>& visited, vector<int
 }
 
 int main(){
-    int n,x,y;
-    cin>>n;
-    vector<int> graph[n+1];
-    vector<bool> visited(n+1, 0);
-    vector<int> color(n+1, 0);
+	
+    int n, m,x,y;
+	while(1){
+		cin>>n;
+		if(n==0) return 0;
+		cin>>m;
+		vector<int> graph[n+1];
+		vector<bool> visited(n+1, 0);
+		vector<int> color(n+1, 0);
 
-    for(int i = 0; i < n; i++){
-        cin>>x>>y;
-        graph[x].push_back(y);
-        graph[y].push_back(x);
-    }
+		for(int i = 0; i < m; i++){
+			cin>>x>>y;
+			graph[x].push_back(y);
+			graph[y].push_back(x);
+		}
 
-    if(isBipartite(graph, 1, visited, color))
-        cout<<"The Graph is Bipartite"<<endl;
-    else
-        cout<<"The Graph is not Bipartite"<<endl;
+		if(isBipartite(graph, 1, visited, color))
+			cout<<"BICOLORABLE."<<endl;
+		else
+			cout<<"NOT BICOLORABLE."<<endl;
+	}
+		
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

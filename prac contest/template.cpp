@@ -30,26 +30,26 @@ void timer() {return;}
 #define ch() getchar()
 #define sz(x) ((int)x.size())
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
-#define F0R(i,a) FOR(i,0,a) 
+#define F0R(i,a) FOR(i,0,a)	
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
 void solve(){
-  
+	
 }
 
 int main(){
-  fast;
-  #ifdef LOCAL
-    freopen("input1.txt", "r", stdin);
-    freopen("output1.txt", "w", stdout);
-  #endif
-  timer();
-  int t=1;
-  FOR(i, 1, t+1){
-    //cout << "Case " << i << ": ";
-    solve();
-  }
-  timer();
+	fast;
+	#ifdef LOCAL
+		freopen("input1.txt", "r", stdin);
+		freopen("output1.txt", "w", stdout);
+	#endif
+	timer();
+	int t=1;
+	FOR(i, 1, t+1){
+		//cout << "Case " << i << ": ";
+		solve();
+	}
+	timer();
 }

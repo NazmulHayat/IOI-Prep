@@ -9,13 +9,12 @@ void bfs(int src, vector<int> graph[], vector<bool>& visited1, vector<int>& dist
     distance[src] = 0;
     q.push(src);
     while(!q.empty()){
-		
-        int s = q.front(); q.pop();
-        
-            ans1.push_back(s);
+		int s = q.front(); q.pop();
+        ans1.push_back(s);
         for(auto u : graph[s]){
             if(visited1[u]) continue;
             visited1[u] = true;
+            if(distance[u] == 0) continue;
             distance[u] = distance[s]+1;
             q.push(u);
         }

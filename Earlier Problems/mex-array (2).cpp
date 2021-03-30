@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp> 
+//#include <ext/pb_ds/tree_policy.hpp> 
 using namespace std;
+//using namespace __gnu_pbds;
 
-#ifdef LOCAL
+//typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> indexed_set; 
+#ifndef EVAL
 void timer(string msg=""){double now=(double)clock()/CLOCKS_PER_SEC;static double t=now;static int cnt=0;
 double diff=now - t;if(cnt!=0)cout<<"\n[time "<<cnt<<" "<<msg<<": "<<fixed<<setprecision(3)<<diff<<" seconds]\n";cnt++;t=now;}
 #define fast ;
@@ -34,32 +38,49 @@ void timer() {return;}
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
+int dx[]={0,0,1,-1};
+int dy[]={1,-1,0,0};
+string ds="RLDU";
+
+int const mx=(2*1e6)+10;
+
 void solve(){
-	debug("gello Worldd");
+	int n,m,a,b,c;
+	cin >> n >> m;
+	while(m--){
+		cin >> a >> b >> c;
+	}
+	if(c==0){
+		cout << "YES" << endl;
+		FOR(i, 0, n){
+			cout << 1 << " ";
+		}
+	}
+	else{
+		cout << "YES" << endl;
+		FOR(i, 0, n){
+			if(i%2==0)cout << 0 << " ";
+			else cout << 2 << " ";
+		}
+	}
+
 }
 
 int main(){
 	fast;
-	freopen("input1.txt", "r", stdin);
-	freopen("output1.txt", "w", stdout);
-
 	timer();
 	int t=1;
+	//cin >> t;
 	FOR(i, 1, t+1){
-		//cout << "Case " << i << ": ";
+    	//cout << "Case " << i << ": ";
 		solve();
 	}
 	timer();
 }
 
+//dont forget to use EVALLLLL
+//remember abt the testcase input in main() 
 
-#include<bits/stdc++.h>
-using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		cout  <<  " NAazMUJL  JOSS " << endl;
-	}
-}
+
+
